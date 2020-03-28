@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_hProgressTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Cj8-1V-mUF">
+                                <rect key="frame" x="44" y="180" width="326" height="31"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChnaged:" destination="BYZ-38-t0r" eventType="valueChanged" id="431-e8-uOW"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9k-J8-MA2">
+                                <rect key="frame" x="133" y="100" width="148" height="34.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4T-WT-H6f">
+                                <rect key="frame" x="189" y="260" width="36" height="32"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="countdownStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Od9-Pd-Bvt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnY-r7-NqG">
+                                <rect key="frame" x="182.66666666666666" y="340" width="49" height="32"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="countdownPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xgj-4n-6nR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wnY-r7-NqG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ge2-t8-6s2"/>
+                            <constraint firstItem="U9k-J8-MA2" firstAttribute="centerX" secondItem="s4T-WT-H6f" secondAttribute="centerX" id="HFj-Ur-VJW"/>
+                            <constraint firstItem="Cj8-1V-mUF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="IrD-8y-Pax"/>
+                            <constraint firstItem="U9k-J8-MA2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Qfp-E0-LZh"/>
+                            <constraint firstItem="Cj8-1V-mUF" firstAttribute="centerX" secondItem="U9k-J8-MA2" secondAttribute="centerX" id="Rh5-Me-Xlp"/>
+                            <constraint firstItem="wnY-r7-NqG" firstAttribute="top" secondItem="s4T-WT-H6f" secondAttribute="top" constant="80" id="gVR-Ao-b6b"/>
+                            <constraint firstItem="s4T-WT-H6f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i7U-OB-7XO"/>
+                            <constraint firstItem="s4T-WT-H6f" firstAttribute="top" secondItem="Cj8-1V-mUF" secondAttribute="top" constant="80" id="jHr-6P-dPp"/>
+                            <constraint firstItem="Cj8-1V-mUF" firstAttribute="top" secondItem="U9k-J8-MA2" secondAttribute="top" constant="80" id="uqG-Ff-7wS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressSlider" destination="Cj8-1V-mUF" id="Y57-Nc-eAG"/>
+                        <outlet property="timeLabel" destination="U9k-J8-MA2" id="YCr-qo-8lg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="136.95652173913044"/>
+        </scene>
+    </scenes>
+</document>
