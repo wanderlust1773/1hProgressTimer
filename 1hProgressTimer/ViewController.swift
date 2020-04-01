@@ -22,7 +22,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         timeLabel.text = "\(Int(progressSlider.value))'"
         
+        /*
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: {didAllow,Error in })
+    *///알람
         
     }
     
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
         
         if progressSlider.value == 0.0 {
             time.invalidate()
+            /*
             let zeroAlert = UNMutableNotificationContent()
             zeroAlert.title = "a"
             zeroAlert.subtitle = "a"
@@ -44,7 +47,7 @@ class ViewController: UIViewController {
             let request = UNNotificationRequest(identifier: "timerdone", content: zeroAlert, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request)
-            
+            *///알람
 
         } else{
             print(progressSlider.value)
